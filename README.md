@@ -27,7 +27,7 @@ after cloning or extracting the source). The HTTP profile serves the app at
 Build a Release deployment with:
 
 ```sh
-dotnet publish BlazorApp1/BlazorApp1.csproj --configuration Release
+dotnet publish BlazorApp1.csproj --configuration Release
 ```
 
 Deploy the published output to a host with the .NET 10 runtime, set
