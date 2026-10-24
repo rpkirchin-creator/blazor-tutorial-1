@@ -87,7 +87,7 @@ public sealed class TerminalCommandStore : IDisposable
             commands.InsertBulk(GetStarterCommands());
         }
 
-        ImportDevelopmentCommands(Path.Combine(AppContext.BaseDirectory, "commands.txt"));
+        ImportDevelopmentCommands(Path.Combine(environment.ContentRootPath, "wwwroot", "commands.txt"));
     }
 
     public List<TerminalCommand> GetCommands(string? category = null)

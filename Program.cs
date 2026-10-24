@@ -59,7 +59,6 @@ app.MapGet("/download/source", (IWebHostEnvironment environment) =>
         "BlazorApp1.csproj",
         "Program.cs",
         "README.md",
-        "commands.txt",
         "windows_powershell_commands.csv",
         ".gitignore"
     };

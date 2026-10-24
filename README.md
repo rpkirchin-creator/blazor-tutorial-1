@@ -14,7 +14,7 @@ server.
 
 ## Run and build the app
 
-The ready-to-use commands are in [commands.txt](commands.txt). Run them from
+The ready-to-use commands are in [commands.txt](wwwroot/commands.txt). Run them from
 the workspace root containing the `BlazorApp1` folder. If you extracted the
 source ZIP and are already inside the project directory, run
 `dotnet run --project BlazorApp1.csproj --launch-profile http` instead. The
@@ -147,7 +147,7 @@ instead of constructing those services themselves.
 
 1. Change a heading or button label in a `.razor` file.
 2. Save and check that the running app reflects the change.
-3. Run the build command from `commands.txt` to check that the project still
+3. Run the build command from `wwwroot/commands.txt` to check that the project still
    compiles.
 4. If the page does not update, read the terminal output, make sure the app
    is still running, and refresh the browser.
@@ -400,13 +400,13 @@ document database.
   and file. Other environments use an in-memory database and do not retain
   command history or edits.
 - When the command collection is empty, the store inserts its starter
-  commands. It then imports the .NET commands from `commands.txt` into the
+  commands. It then imports the .NET commands from `wwwroot/commands.txt` into the
   **Development** category.
 - The import runs when the store is created. It copies only lines beginning
   with a .NET CLI command, associates each with the preceding `#` description,
   and skips commands already present with the same category and syntax. The
-  project file copies `commands.txt` into build and publish output so the
-  importer can find it there.
+  project file includes `wwwroot/commands.txt` as a static web asset so the
+  importer can read it from the published app directory.
 - History reads are sorted newest-first and limited to 50 entries.
 
 ### `CommandRunner`
@@ -434,9 +434,9 @@ is specified), use HTTPS, and keep the .NET runtime and hosting system patched.
   antiforgery, maps the Blazor app and source download, and starts the server.
 - [BlazorApp1.csproj](BlazorApp1.csproj) says this is a web project targeting
   .NET 10, enables nullable reference checking and implicit usings, and
-  references LiteDB. It also copies `commands.txt` to build and publish
-  output, and copies Razor page source and page-specific CSS so the Code
-  viewer can read them at runtime.
+  references LiteDB. It also copies Razor page source and page-specific CSS so
+  the Code viewer can read them at runtime. `wwwroot/commands.txt` is included
+  with the static web assets.
 - [launchSettings.json](Properties/launchSettings.json) defines the local
   HTTP and HTTPS launch profiles and sets the Development environment for
   local runs. These are development launch settings, not production server

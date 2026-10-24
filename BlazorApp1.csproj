@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="commands.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <None Update="README.md" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <None Update="Properties/launchSettings.json" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
