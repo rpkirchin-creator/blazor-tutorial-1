@@ -1,0 +1,35 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager Navigation
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main class="@(IsHomePage ? "home-main" : IsLearnPage ? "learn-main" : IsCodePage ? "code-main" : null)">
+        <div class="top-row px-4 @(IsHomePage ? "home-top-row" : null)">
+            <a href="mailto:rpkirchin@gmail.com">Rkirchin</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>
+
+@code {
+    private bool IsHomePage =>
+        new Uri(Navigation.Uri).AbsolutePath == new Uri(Navigation.BaseUri).AbsolutePath;
+
+    private bool IsLearnPage =>
+        Navigation.ToBaseRelativePath(Navigation.Uri).TrimEnd('/') == "learn";
+
+    private bool IsCodePage =>
+        Navigation.ToBaseRelativePath(Navigation.Uri).TrimEnd('/') == "code";
+}

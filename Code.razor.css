@@ -1,0 +1,66 @@
+.code-page {
+    min-width: 0;
+}
+
+.code-page-title,
+.code-page-intro,
+.code-page-label {
+    color: #fff;
+}
+
+.code-reader {
+    padding: clamp(1rem, 3vw, 2.5rem);
+    border: 1px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    background: #fff;
+    color: #212529;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.16), inset 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.code-section + .code-section {
+    margin-top: 2rem;
+}
+
+.code-section h2 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+}
+
+.code-reader pre {
+    overflow: auto;
+    margin: 0;
+    padding: 1rem;
+    border-radius: var(--bs-border-radius);
+    background: #f1f3f5;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+@media print {
+    /* Keep the selector and print button out of the printed source. */
+    .code-toolbar {
+        display: none !important;
+    }
+
+    .code-reader {
+        max-height: none;
+        min-height: 0;
+        overflow: visible;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        color: #000;
+    }
+
+    .code-section + .code-section {
+        margin-top: 1.5rem;
+        break-before: page;
+    }
+
+    .code-reader pre {
+        overflow: visible;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-size: 9pt;
+    }
+}

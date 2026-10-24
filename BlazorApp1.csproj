@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiteDB" Version="5.0.21" />
+    <PackageReference Include="Markdig" Version="0.40.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="commands.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Update="README.md" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Update="Properties/launchSettings.json" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- Keep selected app source files available to the /code reader in build output. -->
+  <Target Name="CopyCodeSourcesToBuildOutput" AfterTargets="Build">
+    <ItemGroup>
+      <_CodeSources Include="Components/**/*.razor;Components/**/*.razor.css;Services/**/*.cs;Program.cs;BlazorApp1.csproj;wwwroot/app.css" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_CodeSources)"
+          DestinationFiles="@(_CodeSources->'$(TargetDir)%(Identity)')"
+          SkipUnchangedFiles="true" />
+  </Target>
+
+  <!-- Publish does not automatically include the source files needed by /code. -->
+  <Target Name="CopyCodeSourcesToPublishOutput" AfterTargets="Publish">
+    <ItemGroup>
+      <_CodeSources Include="Components/**/*.razor;Components/**/*.razor.css;Services/**/*.cs;Program.cs;BlazorApp1.csproj;wwwroot/app.css" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_CodeSources)"
+          DestinationFiles="@(_CodeSources->'$(PublishDir)%(Identity)')"
+          SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

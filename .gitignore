@@ -1,0 +1,13 @@
+bin/
+obj/
+.vs/
+.vscode/
+*.code-workspace
+*.user
+*.log
+*.db
+*.db-wal
+*.db-shm
+.env
+.env.*
+secrets.json
