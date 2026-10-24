@@ -1,5 +1,10 @@
 # BlazorApp1 learning guide
 
+> **How to use this repository:** This is the source code for a tutorial that
+> you run on your own computer; it is not a live hosted website. You need the
+> .NET 10 SDK to run it. See [Run and build the app](#run-and-build-the-app)
+> for the quick start.
+
 This guide describes how the app is put together and what happens when you use
 each page. The project is a .NET 10 Blazor Server app: its UI is written in
 Razor components, and interactive page events are handled by the ASP.NET Core
