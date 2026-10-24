@@ -14,11 +14,10 @@ server.
 
 ## Run and build the app
 
-The ready-to-use commands are in [commands.txt](wwwroot/commands.txt). Run them from
-the workspace root containing the `BlazorApp1` folder. If you extracted the
-source ZIP and are already inside the project directory, run
-`dotnet run --project BlazorApp1.csproj --launch-profile http` instead. The
-HTTP profile serves the app at `http://127.0.0.1:5236`.
+The ready-to-use commands are in [commands.txt](wwwroot/commands.txt). Run them
+from the project directory containing `BlazorApp1.csproj` (the repository root
+after cloning or extracting the source). The HTTP profile serves the app at
+`http://127.0.0.1:5236`.
 
 ## Publish for hosting
 

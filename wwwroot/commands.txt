@@ -1,25 +1,22 @@
-# Run these commands from the workspace root containing the BlazorApp1 folder.
+# Run these commands from the project directory containing BlazorApp1.csproj.
 
 # Restore project dependencies
-dotnet restore BlazorApp1/BlazorApp1.csproj
+dotnet restore BlazorApp1.csproj
 
 # Build the project
-dotnet build BlazorApp1/BlazorApp1.csproj
+dotnet build BlazorApp1.csproj
 
 # Run using the HTTP profile, then open http://127.0.0.1:5236
-dotnet run --project BlazorApp1/BlazorApp1.csproj --launch-profile http
+dotnet run --project BlazorApp1.csproj --launch-profile http
 
 # Run using the HTTPS profile, then open https://localhost:7232
-dotnet run --project BlazorApp1/BlazorApp1.csproj --launch-profile https
+dotnet run --project BlazorApp1.csproj --launch-profile https
 
 # Run with hot reload while editing
-dotnet watch --project BlazorApp1/BlazorApp1.csproj --launch-profile http
+dotnet watch --project BlazorApp1.csproj --launch-profile http
 
 # Remove generated build output
-dotnet clean BlazorApp1/BlazorApp1.csproj
+dotnet clean BlazorApp1.csproj
 
-# Publish a Release build to BlazorApp1/bin/Release/net10.0/publish
-dotnet publish BlazorApp1/BlazorApp1.csproj --configuration Release
-
-# When running from the project directory (for example, after extracting the source ZIP):
-# dotnet run --project BlazorApp1.csproj --launch-profile http
+# Publish a Release build to bin/Release/net10.0/publish
+dotnet publish BlazorApp1.csproj --configuration Release
