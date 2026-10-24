@@ -1,0 +1,138 @@
+.home-page-title {
+    margin: 0.25rem 0 1rem;
+    text-align: center;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.home-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 8rem);
+    margin: -1.1rem -1.5rem 0;
+    padding: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.home-hero-content {
+    font-weight: bold;
+    width: min(100%, 52rem);
+}
+
+/* A translucent card keeps the setup checklist distinct from the welcome text. */
+.prerequisites {
+    margin: 2rem auto 0;
+    padding: 1.75rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.5), 0 0.25rem 0.75rem rgba(0, 0, 0, 0.3);
+    text-align: left;
+    backdrop-filter: blur(0.5rem);
+}
+
+.prerequisites-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.prerequisites-heading h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.prerequisites-intro {
+    margin: 0.5rem 0 1.25rem;
+    font-weight: normal;
+}
+
+.prerequisite-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.prerequisite-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-weight: normal;
+    line-height: 1.5;
+    min-height: 2.5rem;
+}
+
+.prerequisite-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.prerequisite-resource {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.home-resources {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.prerequisite-resource img {
+    flex: 0 0 auto;
+    width: auto;
+    height: 1.8rem;
+    object-fit: contain;
+}
+
+/* Add a decorative check without adding extra markup to each list item. */
+.prerequisite-list li::before {
+    content: "✓";
+    display: inline-grid;
+    flex: 0 0 1.4rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+    /* Stack checklist items on narrow screens so they remain easy to read. */
+    .prerequisites {
+        padding: 1.25rem;
+    }
+
+    .prerequisite-list {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+}
+
+@media (min-width: 641px) {
+    .home-hero {
+        margin-right: -1.5rem;
+        margin-left: -2rem;
+    }
+}
